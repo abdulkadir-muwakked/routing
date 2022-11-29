@@ -1,13 +1,35 @@
 import './Nav.css'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
+    const links = [
+        {
+            target: '/',
+            text: 'Home'
+        },
+        {
+            target: '/contact',
+            text: 'Contact'
+        },
+        {
+            target: '/about',
+            text: 'About'
+        },
+        {
+            target: '/blog',
+            text: 'Blog'
+        }
+    ]
     return (
-        <nav>
-            <Link to="/" className='test'>Home</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/about">About</Link>
-        </nav>
+        <menu>
+            {links.map((link, i) => {
+                return (
+                    <NavLink key={i} to={link.target} className={({isActive}) => {
+                        return isActive ? 'current' : ''
+                    }}>{link.text}</NavLink>
+                )
+            })}
+        </menu>
     )
 }
 

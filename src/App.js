@@ -3,7 +3,7 @@ import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import Nav from "./components/nav/Nav";
-import Person from "./pages/about/person/Person";
+import Post from "./pages/post/Post";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path='/blog/:slug' element={<Person />} />
+        <Route path='/blog/:slug' element={<Post />} />
       </Routes>
     </>
   );

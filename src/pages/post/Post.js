@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import PostsList from "../../components/postsList/PostsList"
 
-const Person = () => {
+const Post = () => {
     const { slug } = useParams()
     const [post, setPost] = useState({})
 
@@ -13,13 +14,16 @@ const Person = () => {
                 })
             })
             .catch()
-    }, [])
+    }, [slug])
 
     return (
         <div>
             {post.title}
+            <img src={post.thumbnail} />
+            <h3>You may also want to read</h3>
+            <PostsList />
         </div>
     )
 }
 
-export default Person
+export default Post
