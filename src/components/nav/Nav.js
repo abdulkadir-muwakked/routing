@@ -1,5 +1,5 @@
 import './Nav.css'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Nav = () => {
     const links = [
@@ -18,18 +18,32 @@ const Nav = () => {
         {
             target: '/blog',
             text: 'Blog'
+        },
+        {
+            target: '/signup',
+            text: 'Sign Up'
         }
     ]
     return (
-        <menu>
-            {links.map((link, i) => {
-                return (
-                    <NavLink key={i} to={link.target} className={({isActive}) => {
-                        return isActive ? 'current' : ''
-                    }}>{link.text}</NavLink>
-                )
-            })}
-        </menu>
+        <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div className="container-fluid">
+                <Link className="navbar-brand" to="/">Routing App</Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                    {links.map((link, i) => {
+                        return (
+                            <li className="nav-item" key={i}>
+                                <NavLink to={link.target} className='nav-link'>{link.text}</NavLink>
+                            </li>
+                        )
+                    })}
+                    </ul>
+                </div>
+            </div>
+        </nav>
     )
 }
 

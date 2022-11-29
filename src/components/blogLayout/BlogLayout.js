@@ -2,7 +2,7 @@ const BlogLayout = (props) => {
     console.log(props)
     return (
         <>
-            <div className="bg-dark text-light py-4">
+            <div className="bg-light py-4">
                 <div className="container">
                     <div className="row">
                         <div className="col-12">

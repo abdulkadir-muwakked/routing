@@ -5,6 +5,7 @@ import About from "./pages/about/About";
 import Nav from "./components/nav/Nav";
 import Post from "./pages/post/Post";
 import Blog from "./pages/blog/Blog";
+import SignUp from "./pages/signUp/SignUp";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path='/blog/:slug' element={<Post />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/signup' element={<SignUp />} />
       </Routes>
     </>
   );
