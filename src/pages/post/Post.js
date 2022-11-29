@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import BlogLayout from "../../components/blogLayout/BlogLayout"
 import PostsList from "../../components/postsList/PostsList"
 
 const Post = () => {
@@ -17,12 +18,9 @@ const Post = () => {
     }, [slug])
 
     return (
-        <div>
-            {post.title}
-            <img src={post.thumbnail} />
-            <h3>You may also want to read</h3>
-            <PostsList />
-        </div>
+        <BlogLayout title={post.title}>
+            <div dangerouslySetInnerHTML={{__html: post.content}}></div>
+        </BlogLayout>
     )
 }
 
