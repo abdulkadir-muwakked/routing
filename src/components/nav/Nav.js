@@ -12,7 +12,7 @@ const Nav = () => {
         },
         {
             target: '/contact',
-            text: 'Contact'
+            text: 'Contact',
         },
         {
             target: '/about',
@@ -35,6 +35,11 @@ const Nav = () => {
         {
             target: '/signout',
             text: 'Sign Out',
+            forLogged: true
+        },
+        {
+            target: '/tweets',
+            text: 'Tweets',
             forLogged: true
         }
     ]

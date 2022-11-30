@@ -27,9 +27,7 @@ const SignIn = () => {
         if (json.success) {
             // logged in successfully
             authCtx.signIn(json.data, json.token)
-            setTimeout(() => {
-                navigate('/')
-            }, 2000)
+            navigate('/')
         } else {
             window.alert(json.messages[0])
         }
