@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import BlogLayout from "../../components/blogLayout/BlogLayout"
-import PostsList from "../../components/postsList/PostsList"
 
 const Post = () => {
     const { slug } = useParams()

@@ -22,6 +22,10 @@ const Nav = () => {
         {
             target: '/signup',
             text: 'Sign Up'
+        },
+        {
+            target: '/signin',
+            text: 'Sign In'
         }
     ]
     return (
