@@ -1,7 +1,10 @@
 import './Nav.css'
 import { Link, NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
 
 const Nav = () => {
+    const { token } = useContext(AuthContext)
     const links = [
         {
             target: '/',
@@ -21,11 +24,18 @@ const Nav = () => {
         },
         {
             target: '/signup',
-            text: 'Sign Up'
+            text: 'Sign Up',
+            forGuest: true
         },
         {
             target: '/signin',
-            text: 'Sign In'
+            text: 'Sign In',
+            forGuest: true
+        },
+        {
+            target: '/signout',
+            text: 'Sign Out',
+            forLogged: true
         }
     ]
     return (
@@ -38,6 +48,9 @@ const Nav = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                     {links.map((link, i) => {
+                        if ((link.forGuest && token) || (link.forLogged && !token)) {
+                            return
+                        }
                         return (
                             <li className="nav-item" key={i}>
                                 <NavLink to={link.target} className='nav-link'>{link.text}</NavLink>
