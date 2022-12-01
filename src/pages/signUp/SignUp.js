@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import './SignUp.css'
+import classes from './SignUp.module.css'
 import { useNavigate } from 'react-router-dom'
-
+console.log(classes)
 const SignUp = () => {
     const nameRef = useRef()
     const emailRef = useRef()
@@ -14,7 +14,7 @@ const SignUp = () => {
         const email = emailRef.current.value
         const password = passwordRef.current.value
         const passwordConfirmation = passwordConfirmationRef.current.value
-        const response = await fetch('http://ferasjobeir.com/api/users/register', {
+        const response = await fetch(`${process.env.REACT_APP_API}/users/register`, {
             method: 'POST',
             body: JSON.stringify({
                 name: name,
@@ -40,8 +40,8 @@ const SignUp = () => {
         <div className="container">
             <div className="row">
                 <div className="col-md-4 offset-md-4 my-4">
-                    <div className="signup">
-                        <label htmlFor='name' className='mb-2'>Name</label>
+                    <div className={classes.signup}>
+                        <label htmlFor='name' className={`mb-2`} id={classes.label}>Name</label>
                         <input ref={nameRef} type='text' id='name' className='form-control mb-3' />
 
                         <label htmlFor='email' className='mb-2'>Email Address</label>

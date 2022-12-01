@@ -6,7 +6,7 @@ const Tweets = () => {
     const [tweets, setTweets] = useState([])
     useEffect(() => {
         const getTweets = async () => {
-            const response = await fetch('http://ferasjobeir.com/api/posts', {
+            const response = await fetch(`${process.env.REACT_APP_API}/posts`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

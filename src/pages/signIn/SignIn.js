@@ -12,7 +12,7 @@ const SignIn = () => {
     const signIn = async () => {
         const email = emailRef.current.value
         const password = passwordRef.current.value
-        const response = await fetch('http://ferasjobeir.com/api/users/login', {
+        const response = await fetch(`${process.env.REACT_APP_API}/users/login`, {
             method: 'POST',
             body: JSON.stringify({
                 email: email,
