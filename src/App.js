@@ -9,6 +9,7 @@ import SignUp from "./pages/signUp/SignUp";
 import SignIn from "./pages/signIn/SignIn";
 import SignOut from "./pages/signOut/SignOut";
 import Tweets from "./pages/tweets/Tweets";
+import Profile from "./pages/profile/Profile";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/signin' element={<SignIn />} />
         <Route path='/signout' element={<SignOut />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path="*" element={<>NOT FOUND</>} />
       </Routes>
     </>

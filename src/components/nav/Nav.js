@@ -41,6 +41,11 @@ const Nav = () => {
             target: '/tweets',
             text: 'Tweets',
             forLogged: true
+        },
+        {
+            target: '/profile',
+            text: 'Profile',
+            forLogged: true
         }
     ]
     return (
