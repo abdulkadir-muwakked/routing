@@ -9,7 +9,7 @@ import UserManager from './contexts/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename='/routing'>
     <UserManager>
       <App />
     </UserManager>

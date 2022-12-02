@@ -10,10 +10,14 @@ const SignUp = () => {
     const navigate = useNavigate()
 
     const register = async () => {
-        const name = nameRef.current.value
+        const name = nameRef.current.value.trim()
         const email = emailRef.current.value
         const password = passwordRef.current.value
         const passwordConfirmation = passwordConfirmationRef.current.value
+        if (!/^[A-Z][a-z]+ ([A-Z][a-z]+ ){0,2}([A-Z][a-z]+)$/.test(name)) {
+            alert('Please enter a valid name')
+            return
+        }
         const response = await fetch(`${process.env.REACT_APP_API}/users/register`, {
             method: 'POST',
             body: JSON.stringify({
